@@ -1,0 +1,23 @@
+# Python virtual environments & caches
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.sqlite3
+
+# Node & Frontend builds
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Local Environment Secrets (use .env.example for template)
+backend/.env
+.env
+.env.local
+
+# IDEs & System
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

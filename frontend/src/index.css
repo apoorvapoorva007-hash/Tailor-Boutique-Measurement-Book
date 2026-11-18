@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Boutique Brand Colors */
+  --primary: #6E382E;         /* Deep luxury warm chestnut */
+  --primary-hover: #582A21;
+  --primary-light: #F7EDE9;
+  --primary-gradient: linear-gradient(135deg, #7A3D33 0%, #542820 100%);
+  
+  --secondary: #B9736B;       /* Blush rose */
+  --secondary-light: #FBF0EE;
+  
+  --accent-blush: #EFA69B;     /* Blush pink */
+  --accent-cream: #FFFDF9;     /* Ultra pure cream */
+  --cream: #FAF6F0;            /* Warm soft boutique cream */
+  --beige: #F3ECE4;            /* Soft cashmere beige */
+  --beige-border: #E8DCD3;     /* Subtle warm border */
+  
+  --surface-card: #FFFFFF;
+  --surface-muted: #F8F4EE;
+  
+  --text-main: #271E1B;        /* Deep espresso */
+  --text-body: #4A3E39;        /* Warm charcoal */
+  --text-muted: #85746D;       /* Muted taupe */
+  --text-light: #B0A29C;
+
+  /* Workflow & Alert Colors */
+  --status-pending: #D97706;
+  --status-stitching: #2563EB;
+  --status-trial: #7C3AED;
+  --status-alteration: #DC2626;
+  --status-completed: #059669;
+  --status-delivered: #0D9488;
+  --status-cancelled: #6B7280;
+  
+  --overdue-bg: #FEF2F2;
+  --overdue-border: #F87171;
+  --overdue-text: #991B1B;
+
+  /* Shadows & Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  
+  --shadow-sm: 0 1px 3px rgba(62, 31, 25, 0.05), 0 1px 2px rgba(0,0,0,0.03);
+  --shadow-md: 0 4px 12px rgba(62, 31, 25, 0.08), 0 2px 4px rgba(0,0,0,0.02);
+  --shadow-lg: 0 12px 28px rgba(62, 31, 25, 0.12), 0 4px 8px rgba(0,0,0,0.04);
+  --shadow-hover: 0 14px 34px rgba(62, 31, 25, 0.16);
+
+  /* Fonts */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--cream);
+  color: var(--text-body);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--beige-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+/* Button & Card Micro-Interactions */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 18px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--primary-gradient);
+  color: #FFFFFF;
+  box-shadow: 0 2px 6px rgba(110, 56, 46, 0.25);
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #8A463B 0%, #633027 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(110, 56, 46, 0.35);
+}
+
+.btn-secondary {
+  background: var(--surface-card);
+  color: var(--primary);
+  border-color: var(--beige-border);
+}
+.btn-secondary:hover {
+  background: var(--primary-light);
+  border-color: var(--secondary);
+  color: var(--primary-hover);
+}
+
+.btn-sm {
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  border-radius: var(--radius-sm);
+}
+
+.btn-danger {
+  background: #FEE2E2;
+  color: #DC2626;
+  border-color: #FECACA;
+}
+.btn-danger:hover {
+  background: #DC2626;
+  color: #FFFFFF;
+}
+
+/* Card Styles */
+.boutique-card {
+  background: var(--surface-card);
+  border: 1px solid var(--beige-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.boutique-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Status Badges */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.status-received {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+.status-measurement {
+  background-color: #FEF08A;
+  color: #854D0E;
+}
+.status-stitching {
+  background-color: #DBEAFE;
+  color: #1E40AF;
+}
+.status-trial {
+  background-color: #EDE9FE;
+  color: #5B21B6;
+}
+.status-alteration {
+  background-color: #FEE2E2;
+  color: #991B1B;
+}
+.status-completed {
+  background-color: #D1FAE5;
+  color: #065F46;
+}
+.status-delivered {
+  background-color: #CCFBF1;
+  color: #115E59;
+}
+.status-cancelled {
+  background-color: #F3F4F6;
+  color: #4B5563;
+}
+
+/* Print CSS */
+@media print {
+  aside, .sidebar, .no-print, header, .nav-header {
+    display: none !important;
+  }
+  body, main, .main-content {
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+  .printable-card {
+    border: none !important;
+    box-shadow: none !important;
+    width: 100% !important;
+  }
+}
