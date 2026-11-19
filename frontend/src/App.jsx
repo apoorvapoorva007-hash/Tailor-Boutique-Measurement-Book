@@ -47,10 +47,10 @@ function MainLayout({ user, onLogout, onOpenLogin }) {
   return (
     <div style={{ display: 'flex', minHeight: '100vh', backgroundColor: 'var(--cream)' }}>
       <Sidebar user={user} onLogout={onLogout} onOpenLogin={onOpenLogin} />
-      
+
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0 }}>
         <Header title={title} subtitle={subtitle} />
-        
+
         <main style={{ flex: 1, overflowY: 'auto' }}>
           <Routes>
             <Route path="/" element={<Dashboard />} />
@@ -82,7 +82,7 @@ export default function App() {
       // Automatic seamless login with demo admin credentials for effortless testing
       authService.login('admin', 'admin123')
         .then(res => setUser(res.user))
-        .catch(() => {});
+        .catch(() => { });
     }
   }, []);
 
@@ -94,12 +94,12 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <MainLayout 
-        user={user} 
-        onLogout={handleLogout} 
-        onOpenLogin={() => setLoginOpen(true)} 
+      <MainLayout
+        user={user}
+        onLogout={handleLogout}
+        onOpenLogin={() => setLoginOpen(true)}
       />
-      
+
       <LoginModal
         isOpen={loginOpen}
         onClose={() => setLoginOpen(false)}
