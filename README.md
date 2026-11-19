@@ -57,3 +57,5 @@ To run backend unit tests verifying all 9 core API endpoints:
 .\venv\Scripts\python.exe backend\manage.py test api.tests_api
 ```
 *(All 9 tests pass with flying colors)*
+# Tailor-Boutique-Measurement-Book
+A web based tailor and boutique management system for customer measurements,stiching orders and delivery tracking
